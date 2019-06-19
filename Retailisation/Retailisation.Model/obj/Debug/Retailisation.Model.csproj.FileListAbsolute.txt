@@ -1,0 +1,14 @@
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\bin\Debug\Retailisation.Model.dll.config
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\bin\Debug\Retailisation.Model.dll
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\bin\Debug\Retailisation.Model.pdb
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\bin\Debug\EntityFramework.dll
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\bin\Debug\EntityFramework.xml
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\obj\Debug\Retailisation.Model.csprojAssemblyReference.cache
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\obj\Debug\Retailisation.Model.csproj.CoreCompileInputs.cache
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\obj\Debug\Retailisation.Model.csproj.CopyComplete
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\obj\Debug\Retailisation.Model.dll
+C:\Users\Dipak N\Rupali\Net Projects\Retailisation\Retailisation\Retailisation.Model\obj\Debug\Retailisation.Model.pdb

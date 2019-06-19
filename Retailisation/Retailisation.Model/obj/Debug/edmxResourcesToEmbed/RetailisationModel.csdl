@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RetailisationdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="product_id" />
+      <PropertyRef Name="store_id" />
+    </Key>
+    <Property Name="T_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="store_id" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Inventory_Product" FromRole="Inventory" ToRole="Product" />
+    <NavigationProperty Name="Store" Relationship="Self.FK_Inventory_Store" FromRole="Inventory" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="T_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Inventories" Relationship="Self.FK_Inventory_Product" FromRole="Product" ToRole="Inventory" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="T_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Inventories" Relationship="Self.FK_Inventory_Store" FromRole="Store" ToRole="Inventory" />
+  </EntityType>
+  <Association Name="FK_Inventory_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RetailisationdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Stores" EntityType="Self.Store" />
+    <AssociationSet Name="FK_Inventory_Product" Association="Self.FK_Inventory_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Inventory" EntitySet="Inventories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_Store" Association="Self.FK_Inventory_Store">
+      <End Role="Store" EntitySet="Stores" />
+      <End Role="Inventory" EntitySet="Inventories" />
+    </AssociationSet>
+    <FunctionImport Name="sp_getCountrywiseStock" ReturnType="Collection(RetailisationdbModel.sp_getCountrywiseStock_Result)" />
+    <FunctionImport Name="sp_getNetworkInventory" ReturnType="Collection(RetailisationdbModel.sp_getNetworkInventory_Result)" />
+  </EntityContainer>
+  <ComplexType Name="sp_getCountrywiseStock_Result">
+    <Property Type="String" Name="StoreCountry" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+    <Property Type="Int32" Name="TotalQuantity" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_getNetworkInventory_Result">
+    <Property Type="Int32" Name="ProductId" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ProductQuantity" Nullable="true" />
+    <Property Type="Int32" Name="StoreId" Nullable="false" />
+    <Property Type="String" Name="StoreName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="StoreCountry" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>
