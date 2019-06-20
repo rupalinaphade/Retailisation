@@ -10,6 +10,7 @@ namespace Retailisation.DAL
     public interface IProductRepository : IRepository<Product>
     {
         IEnumerable<ProductDTO> GetProduct();
+
         ProductDTO GetProduct(int id);
         IEnumerable<ProductDTO> GetProduct(string desc);
         int PostProduct(Product objProduct);

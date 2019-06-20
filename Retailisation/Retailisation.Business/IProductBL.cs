@@ -9,7 +9,7 @@ namespace Retailisation.Business
     public interface IProductBL
     {
         IEnumerable<ProductDTO> GetProduct();
-
+        
         ProductDTO GetProduct(int id);
 
         IEnumerable<ProductDTO> GetProduct(string desc);

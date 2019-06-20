@@ -11,7 +11,9 @@ namespace Retailisation.API
         {
 			var container = new UnityContainer();
             container.RegisterType<IProductBL, ProductBl>();
+            container.RegisterType<IProductJsonBl, ProductJsonBl>();
             container.RegisterType<IStoreBL, StoreBl>();
+            container.RegisterType<IStoreJsonBl, StoreJsonBl>();
             // register all your components with the container here
             // it is NOT necessary to register your controllers
 

@@ -78,6 +78,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RetailisationModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="RootObject.cs" />
     <Compile Include="sp_getCountrywiseStock_Result.cs">
       <DependentUpon>RetailisationModel.tt</DependentUpon>
     </Compile>

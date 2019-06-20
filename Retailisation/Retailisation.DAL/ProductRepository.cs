@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Retailisation.Model;
 namespace Retailisation.DAL
 {
@@ -27,7 +29,8 @@ namespace Retailisation.DAL
             return Product;
            
         }
-
+        
+      
         public ProductDTO GetProduct(int id)
         {
             var Product = (from p in db.Products

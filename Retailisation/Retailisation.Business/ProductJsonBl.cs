@@ -5,43 +5,41 @@ using System.Text;
 using System.Threading.Tasks;
 using Retailisation.Model;
 using Retailisation.DAL;
-
 namespace Retailisation.Business
 {
-    public class ProductBl : IProductBL
+    public class ProductJsonBl : IProductJsonBl
     {
-        IProductRepository _productRepository;
-        public ProductBl(IProductRepository productRepository)
+        IProductJsonRepository _productRepository;
+        public ProductJsonBl(IProductJsonRepository productRepository)
         {
             _productRepository = productRepository;
-           
+
+        }
+        public ProductJSON GetProduct(int id)
+        {
+            ProductJSON ObjProduct;
+            ObjProduct = _productRepository.GetProduct(id);
+
+            return ObjProduct;
         }
 
-        public IEnumerable<ProductDTO> GetProduct()
+
+        public IEnumerable<ProductJSON> GetProduct(string desc)
         {
-            IEnumerable<ProductDTO> productlist;
+            IEnumerable<ProductJSON> Prodlist;
+            Prodlist = _productRepository.GetProduct(desc);
+            return Prodlist;
+        }
+        public IEnumerable<ProductJSON> GetProduct()
+        {
+            IEnumerable<ProductJSON> productlist;
             productlist = _productRepository.GetProduct();
             return productlist;
 
         }
        
 
-        public ProductDTO GetProduct(int id)
-        {
-            ProductDTO ObjProduct;
-            ObjProduct = _productRepository.GetProduct(id);
-            
-            return ObjProduct;
-        }
-
-        public IEnumerable<ProductDTO> GetProduct(string desc)
-        {
-            IEnumerable<ProductDTO> Prodlist;
-            Prodlist = _productRepository.GetProduct(desc);
-            return Prodlist;
-        }
-
-        public int PostProduct(Product objProduct)
+        public int PostProduct(ProductJSON objProduct)
         {
             int productid;
             productid = _productRepository.PostProduct(objProduct);

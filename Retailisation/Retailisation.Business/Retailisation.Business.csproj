@@ -70,10 +70,14 @@
   <ItemGroup>
     <Compile Include="DependencyInjectionExtension.cs" />
     <Compile Include="IProductBL.cs" />
+    <Compile Include="IProductJsonBl.cs" />
     <Compile Include="IStoreBL.cs" />
+    <Compile Include="IStoreJsonBl.cs" />
     <Compile Include="ProductBl.cs" />
+    <Compile Include="ProductJsonBl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoreBl.cs" />
+    <Compile Include="StoreJsonBl.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Retailisation.DAL\Retailisation.DAL.csproj">

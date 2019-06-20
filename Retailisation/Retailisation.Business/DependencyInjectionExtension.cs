@@ -22,7 +22,9 @@ namespace Retailisation.Business
         public static void RegisterComponents(UnityContainer container)
         {
             container.RegisterType<IProductRepository, ProductRepository>();
+            container.RegisterType<IProductJsonRepository, ProductJsonRepository>();
             container.RegisterType<IStoreRepository, StoreRepository>();
+            container.RegisterType<IStoreJsonRepository, StoreJsonRepository>();
         }
     }
 }
