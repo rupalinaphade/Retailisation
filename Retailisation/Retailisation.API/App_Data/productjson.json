@@ -52,8 +52,8 @@
     },
     {
       "id": 11,
-      "name": "productJSONNew A1",
-      "description": "productJSONNew A1"
+      "name": "productNew B1",
+      "description": "productNew B1"
     }
   ],
   "stores": [
@@ -296,6 +296,53 @@
       "id": 6,
       "name": "StoreJSON A1",
       "country": "IND",
+      "inventory": [
+        {
+          "product_id": 1,
+          "quantity": 1
+        },
+        {
+          "product_id": 2,
+          "quantity": 1
+        },
+        {
+          "product_id": 3,
+          "quantity": 1
+        },
+        {
+          "product_id": 4,
+          "quantity": 1
+        },
+        {
+          "product_id": 5,
+          "quantity": 1
+        },
+        {
+          "product_id": 6,
+          "quantity": 1
+        },
+        {
+          "product_id": 7,
+          "quantity": 0
+        },
+        {
+          "product_id": 8,
+          "quantity": 0
+        },
+        {
+          "product_id": 9,
+          "quantity": 0
+        },
+        {
+          "product_id": 10,
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "StoreNew B1",
+      "country": "NL",
       "inventory": [
         {
           "product_id": 1,

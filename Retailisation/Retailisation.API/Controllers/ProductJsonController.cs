@@ -32,18 +32,21 @@ namespace Retailisation.API.Controllers
         public JsonResult<ProductJSON> GetProducts(int id)
         {
             ProductJSON objProduct = _productBl.GetProduct(id);
-            
+            if(objProduct == null)
+            {
+                objProduct = new ProductJSON();
+            }
             return Json(objProduct);
         }
         [HttpGet]
-        [Route("api/ProductJson/desc={desc}")]
-        public JsonResult<IEnumerable<ProductJSON>> GetProducts(string desc)
+        //[Route("api/ProductJson/desc={desc}")]
+        public JsonResult<IEnumerable<ProductJSON>> GetProducts(string description)
         {
-            IEnumerable<ProductJSON> productlist = _productBl.GetProduct(desc);
+            IEnumerable<ProductJSON> productlist = _productBl.GetProduct(description);
             
             return Json(productlist);
         }
-        public HttpResponseMessage PostProduct(ProductJSON objProduct)
+        public HttpResponseMessage PostProduct([FromBody] ProductJSON objProduct)
         {
             int newprodid = 0;
             if (ModelState.IsValid)

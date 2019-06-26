@@ -17,8 +17,8 @@ namespace Retailisation.DAL
         private string Json = File.ReadAllText(System.Web.Hosting.HostingEnvironment.MapPath("~/App_Data/productjson.json"));
         public IEnumerable<ProductJSON> GetProduct()
         {
-            var json = File.ReadAllText(Path.Combine("C:\\Users\\Dipak N\\Rupali\\", "productjson.json"));
-            RootObject objlist = JsonConvert.DeserializeObject<RootObject>(json);
+            
+            RootObject objlist = JsonConvert.DeserializeObject<RootObject>(Json);
             IEnumerable<ProductJSON> productlist = objlist.products;
 
             return productlist;

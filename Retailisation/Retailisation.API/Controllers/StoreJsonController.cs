@@ -36,7 +36,7 @@ namespace Retailisation.API.Controllers
             return Json(objStore);
         }
         [HttpGet]
-        [Route("api/StoreJson/country={country}")]
+        //[Route("api/StoreJson/country={country}")]
         public JsonResult<IEnumerable<StoreJSON>> GetStore(string country)
         {
             IEnumerable<StoreJSON> productlist = _storeBl.GetStore(country);
@@ -57,7 +57,7 @@ namespace Retailisation.API.Controllers
             }
             else
             {
-                response = Request.CreateResponse(HttpStatusCode.OK, "New Product is created");
+                response = Request.CreateResponse(HttpStatusCode.OK, "New Store is created");
 
             }
             return response;
